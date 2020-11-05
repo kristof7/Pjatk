@@ -1,16 +1,16 @@
-package zadanie_1;
+package zadanie_2;
 
-public class S23813_zestaw1 {
+public class S23813_zestaw2 {
     public static void main(String[] args) {
-        S23813_zestaw1 s23813_zestaw1 = new S23813_zestaw1();
+        S23813_zestaw2 s23813_zestaw2 = new S23813_zestaw2();
         System.out.println("\n------------------------------------------------\n");
-        s23813_zestaw1.cwiczenie_01();
+        s23813_zestaw2.cwiczenie_01();
         System.out.println("\n------------------------------------------------\n");
-        s23813_zestaw1.cwiczenie_02();
+        s23813_zestaw2.cwiczenie_02();
         System.out.println("\n------------------------------------------------\n");
-        s23813_zestaw1.cwiczenie_03();
+        s23813_zestaw2.cwiczenie_03();
         System.out.println("\n------------------------------------------------\n");
-        s23813_zestaw1.cwiczenie_04();
+        s23813_zestaw2.cwiczenie_04();
     }
 
     public void cwiczenie_01() {
@@ -81,24 +81,19 @@ public class S23813_zestaw1 {
     public void cwiczenie_03() {
         System.out.println("Cwiczenie_03\n");
 
-        int a = 800;
-        int c = 0b11111;
-        byte b = (byte) a;
+        int number = 1231;
         System.out.println("Wartość reprezentowana przez ostatnie 5 bitów tego literału:");
-        System.out.println(b & c);
+        System.out.println(number & 0b11111);
         System.out.println("1 lub 0 w zależności od wartości siódmego bitu tego literału:");
-        int d = 0b1000000;
-        System.out.println((b & d) >> 6);
+        System.out.println(number & 0b11111);
         System.out.println("Wartość poszczególnych bajtów(począwszy od najbardziej znaczącego) z których skłąda sięta liczby:");
-        System.out.println((a >> 24) & 0xFF);
-        System.out.println((a >> 16) & 0xFF);
-        System.out.println((a >> 8) & 0xFF);
-        System.out.println(a & 0xFF);
+        System.out.println((number >> 24) & 0xFF);
+        System.out.println((number >> 16) & 0xFF);
+        System.out.println((number >> 8) & 0xFF);
+        System.out.println(number & 0xFF);
         System.out.println("wartość reprezentowaną przez dwa środkowe bajty literału reprezentowane jako liczba z przedziału");
-        int f = 0b1111111100000000;
-        int e = 0b111111110000000000000000;
-        System.out.println(a & f);
-        System.out.println(a & e);
+        System.out.println(number & 0b1111111100000000);
+        System.out.println(number & 0b111111110000000000000000);
     }
 
     public void cwiczenie_04() {
