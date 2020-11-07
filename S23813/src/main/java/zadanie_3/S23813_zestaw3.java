@@ -57,10 +57,42 @@ public class S23813_zestaw3 {
     public void cwiczenie_02() {
         System.out.println("Cwiczenie_02\n");
 
+
+        boolean logiczna = true;
+        int calkowita = 165;
+        double rzeczywista = 165.0d;
+        int kodujacaZnaki = 0b10100101;
+
+
+        System.out.println(logiczna);
+        System.out.println(calkowita);
+        System.out.println(rzeczywista);
+        System.out.println(kodujacaZnaki);
+        System.out.println("-----------------");
+//        System.out.println(logiczna == calkowita);
+//        System.out.println(logiczna == rzeczywista);
+//        System.out.println(logiczna == kodujacaZnaki);
+//        System.out.println(calkowita == logiczna);
+        System.out.println(calkowita == rzeczywista);
+        System.out.println(calkowita == kodujacaZnaki);
+//        System.out.println(rzeczywista == logiczna);
+        System.out.println(rzeczywista == calkowita);
+        System.out.println(rzeczywista == kodujacaZnaki);
+//        System.out.println(kodujacaZnaki == logiczna);
+        System.out.println(kodujacaZnaki == calkowita);
+        System.out.println(kodujacaZnaki == rzeczywista);
+
     }
 
     public void cwiczenie_03() {
         System.out.println("Cwiczenie_03\n");
+
+        int a123 = 1;
+//        int 1napis = 2;
+//        int @znak = 3;
+//        int void = 4;
+//        int null = 5;
+
     }
 
     public void cwiczenie_04() {
