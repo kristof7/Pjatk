@@ -108,6 +108,26 @@ public class S23813_zestaw4 {
     public void cwiczenie_06() {
         System.out.println("Cwiczenie_06\n");
 
+        int a = 1;
+        int b = 1;
+        int c = 3;
+
+        if (a == b) {
+            System.out.println(a + " oraz " + b + " są takie same");
+        } else {
+            System.out.println(a + " oraz " + b + " nie są takie same");
+        }
+        if (a == c) {
+            System.out.println(a + " oraz " + c + " są takie same");
+        } else {
+            System.out.println(a + " oraz " + c + " nie są takie same");
+        }
+        if (b == c) {
+            System.out.println(b + " oraz " + c + " są takie same");
+        } else {
+            System.out.println(b + " oraz " + c + " nie są takie same");
+        }
+
     }
 
     public void cwiczenie_07() {
