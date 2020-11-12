@@ -97,18 +97,52 @@ public class S23813_zestaw3 {
 
     public void cwiczenie_04() {
         System.out.println("Cwiczenie_04\n");
+        int zmiennaInt = 7;
 
+        System.out.println(zmiennaInt);
     }
 
     public void cwiczenie_05() {
         System.out.println("Cwiczenie_05\n");
+
+        char charValue = 'a';
+        char charvalue = 'b';
+//        skompiluje się zmiana wielkości litery liczy się jako nowa zmienna
+
+        System.out.println(charValue);
+        System.out.println(charValue);
+
+
     }
 
     public void cwiczenie_06() {
         System.out.println("Cwiczenie_06\n");
+        int a = 7;
+        double b = 7d;
+
+//        System.out.println(a = b);
+        System.out.println(b = a);
+
     }
 
     public void cwiczenie_07() {
         System.out.println("Cwiczenie_07\n");
+
+        byte byteVal = 7;
+        char charVal = '7';
+        int intVal = 7;
+        float floatVal = 7.0f;
+        double doubleVal = 7.0d;
+
+//        char charResult = charVal + intVal;
+        // z charResult nie można dodawać zmiennej char do zmiennej int, char jest znakiem a byte liczbą
+        char charResult = (char) (charVal + intVal); // rozwiazanie problemu - narzucenie konkretego typu dla rezultatu
+        int intResult = intVal + charVal;
+//        float floatResult = floatVal + doubleVal;
+        // z floatResult trzeba określić czy zmienna jest double czy float ewentualnie przekonwertować zmienną do jednego typu, nie można dodawać rózych typów zmiennoprzecinkowych
+        float floatResult = (float) (floatVal + doubleVal); // rozwiazanie problemu- narzucenie konkretego typu dla rezultatu
+
+        float byteResult = byteVal + intVal;
+
     }
 }
