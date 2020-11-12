@@ -1,5 +1,7 @@
 package zadanie_4;
 
+import java.util.Scanner;
+
 public class S23813_zestaw4 {
 
     public static void main(String[] args) {
@@ -132,6 +134,73 @@ public class S23813_zestaw4 {
 
     public void cwiczenie_07() {
         System.out.println("Cwiczenie_07\n");
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Program do obliczania pory roku po wpisanej dacie. Program nie uwqzględnia walidacji wprowadzania nieprawidłowych danych");
+        System.out.println("Podaj dni miesiąca (wpisz od 1-31 zależnie od miesiąca):");
+        int dzien = scanner.nextInt();
+        System.out.println("Podaj numer miesiąca (wpisz od 1-12):");
+        int miesiac = scanner.nextInt();
+
+        System.out.println("Data to " + dzien + " " + miesiac);
+
+
+        switch (miesiac) {
+
+            case 1:
+            case 2:
+            case 3:
+                if (miesiac == 1) {
+                    System.out.println("Zima");
+                } else if (miesiac == 2) {
+                    System.out.println("Zima");
+                } else if (miesiac == 3 && dzien >= 1 && dzien < 21) {
+                    System.out.println("Zima");
+                } else {
+                    System.out.println("Wiosna");
+                }
+                break;
+            case 4:
+            case 5:
+            case 6:
+                if (miesiac == 4) {
+                    System.out.println("Wiosna");
+                } else if (miesiac == 5) {
+                    System.out.println("Wiosna");
+                } else if (miesiac == 6 && dzien >= 1 && dzien <= 20) {
+                    System.out.println("Wiosna");
+                } else {
+                    System.out.println("Lato");
+                }
+                break;
+            case 7:
+            case 8:
+            case 9:
+                if (miesiac == 7) {
+                    System.out.println("Lato");
+                } else if (miesiac == 8) {
+                    System.out.println("Lato");
+                } else if (miesiac == 9 && dzien >= 1 && dzien <= 22) {
+                    System.out.println("Lato");
+                } else {
+                    System.out.println("Jesien");
+                }
+                break;
+            case 10:
+            case 11:
+            case 12:
+                if (miesiac == 10) {
+                    System.out.println("Jesien");
+                } else if (miesiac == 11) {
+                    System.out.println("Jesien");
+                } else if (miesiac == 12 && dzien >= 1 && dzien <= 21) {
+                    System.out.println("Jesien");
+                } else {
+                    System.out.println("Zima");
+                }
+                break;
+
+        }
 
     }
 
