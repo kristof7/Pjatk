@@ -93,6 +93,16 @@ public class S23813_zestaw4 {
     public void cwiczenie_05() {
         System.out.println("Cwiczenie_05\n");
 
+        int a = 1;
+        int b = 2;
+
+//        (!(a<b) && !(a>b))
+
+        // jezeli a nie jest wieksze ani nie jest mniejsze od b czyli a jest równe b
+        if (a == b) {
+            //...
+        }
+
     }
 
     public void cwiczenie_06() {
