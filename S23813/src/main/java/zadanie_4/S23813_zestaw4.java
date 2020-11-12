@@ -69,6 +69,25 @@ public class S23813_zestaw4 {
     public void cwiczenie_04() {
         System.out.println("Cwiczenie_04\n");
 
+
+        boolean doesSignificantWork = true;
+        boolean makesBreakthrough = false;
+        boolean nobelPrizeCandidate = false;
+
+        // --------- Dłuższa wersja --------
+        if (doesSignificantWork) {
+
+            if (makesBreakthrough)
+                nobelPrizeCandidate = true;
+            else
+                nobelPrizeCandidate = false;
+        } else if (!doesSignificantWork)
+            nobelPrizeCandidate = false;
+
+        // --------- Skrócona wersja --------
+
+        System.out.println(doesSignificantWork ? ((makesBreakthrough) ? (nobelPrizeCandidate = true) : (nobelPrizeCandidate = false)) : (nobelPrizeCandidate = false));
+
     }
 
     public void cwiczenie_05() {
