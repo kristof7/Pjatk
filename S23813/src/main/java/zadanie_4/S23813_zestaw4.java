@@ -29,15 +29,40 @@ public class S23813_zestaw4 {
     public void cwiczenie_01() {
         System.out.println("Cwiczenie_01\n");
 
+        int i = 10;
+        i = i++;
+        i = ++i;
+        i = i++ + ++i;
+        System.out.println("Rezultat: i wynosi " + i);
+
     }
 
     public void cwiczenie_02() {
         System.out.println("Cwiczenie_02\n");
 
+        double a = -7;
+        double x = 0;
+        if (a >= 0) x = 1.701;
+        if (a < 0) x = (2D * 3.14f);
+        System.out.println("1. Rezultat: x wynosi " + ((a > 0) ? (1.701) : (2D * 3.14f)));
+        System.out.println("2. Rezultat: x wynosi " + x);
+
     }
 
     public void cwiczenie_03() {
         System.out.println("Cwiczenie_03\n");
+
+        int zmInt = 4;
+        double zmDouble = -1.0;
+        if (zmInt > 0)
+            if (zmDouble > 0)
+                System.out.println("Here I am!");
+            else
+                System.out.println("No, I am here!");
+        System.out.println("No, actually , I am here!");
+
+        // typ double powinien miec oznaczenie w postaci przyrostka d, / warunek if teoretycznie powinien mieć klamry jeżeli nie chcemy uchwycić ostatniego wywołania "No, actually , I am here!"
+        // (choc w przeciwnym wypadku nie jest to konieczne, wtedy warunek jest spełniony dla pierwszej linkijki pod spodem)
 
     }
 
