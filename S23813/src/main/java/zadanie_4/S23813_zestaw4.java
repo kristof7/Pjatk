@@ -207,15 +207,15 @@ public class S23813_zestaw4 {
     public void cwiczenie_08() {
         System.out.println("Cwiczenie_08\n");
 
-        double liczba = 7.5d;
+        double liczba = 0.7d;
 
-        if (liczba >= 0) {
+        if (liczba > 0) {
             System.out.println("liczba " + liczba + " należy do zbioru A");
         }
-        if (liczba <= 1) {
+        if (liczba < 1) {
             System.out.println("liczba " + liczba + " należy do zbioru B");
         }
-        if (liczba == 0 || liczba == 1) {
+        if (liczba > 0 && liczba < 1) {
             System.out.println("liczba " + liczba + " należy do zbioru C");
         }
     }
@@ -223,6 +223,17 @@ public class S23813_zestaw4 {
     public void cwiczenie_09() {
         System.out.println("Cwiczenie_09\n");
 
+        int wrt = -3;
+
+        if ((wrt > -5 && wrt <= 10) || (wrt > -5 && wrt < 0) || (wrt > 5 && wrt < 10)) {
+            System.out.println("liczba " + wrt + " należy do zbioru A");
+        }
+        if ((wrt <= -13) || (wrt > -8 && wrt <= -3)) {
+            System.out.println("liczba " + wrt + " należy do zbioru B");
+        }
+        if (wrt >= -4) {
+            System.out.println("liczba " + wrt + " należy do zbioru C");
+        }
     }
 
     public void cwiczenie_10() {
