@@ -234,11 +234,23 @@ public class S23813_zestaw4 {
         if (wrt >= -4) {
             System.out.println("liczba " + wrt + " należy do zbioru C");
         }
+
+        if (((wrt > -5 && wrt <= 10) || (wrt > -5 && wrt < 0) || (wrt > 5 && wrt < 10)) && ((wrt <= -13) || (wrt > -8 && wrt <= -3)) && (wrt >= -4)) {
+            System.out.println("liczba " + wrt + " należy do czesci wspolnej wszystkich trzech zbiorów A, B, C");
+        }
+
     }
 
     public void cwiczenie_10() {
         System.out.println("Cwiczenie_10\n");
 
-    }
+        int wrt = -12;
 
+        if ((wrt > -15 && wrt < -10) && !(wrt < -13)) {
+            System.out.println("liczba " + wrt + " należy tylko do zbioru A");
+        }
+        if ((wrt < -13) && !(wrt > -15 && wrt < -10)) {
+            System.out.println("liczba " + wrt + " należy tylko do zbioru B");
+        }
+    }
 }
