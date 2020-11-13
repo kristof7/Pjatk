@@ -142,7 +142,7 @@ public class S23813_zestaw4 {
         System.out.println("Podaj numer miesiąca (wpisz od 1-12):");
         int miesiac = scanner.nextInt();
 
-        System.out.println("Data to " + dzien + " " + miesiac);
+        System.out.println("Data to " + dzien + "/" + miesiac);
 
 
         switch (miesiac) {
@@ -207,6 +207,17 @@ public class S23813_zestaw4 {
     public void cwiczenie_08() {
         System.out.println("Cwiczenie_08\n");
 
+        double liczba = 7.5d;
+
+        if (liczba >= 0) {
+            System.out.println("liczba " + liczba + " należy do zbioru A");
+        }
+        if (liczba <= 1) {
+            System.out.println("liczba " + liczba + " należy do zbioru B");
+        }
+        if (liczba == 0 || liczba == 1) {
+            System.out.println("liczba " + liczba + " należy do zbioru C");
+        }
     }
 
     public void cwiczenie_09() {
