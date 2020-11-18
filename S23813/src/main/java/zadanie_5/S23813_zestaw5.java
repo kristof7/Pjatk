@@ -59,6 +59,23 @@ public class S23813_zestaw5 {
     public void cwiczenie_03() {
         System.out.println("Cwiczenie_03\n");
 
+        boolean booly = false;
+
+        int whileValue = 0;
+
+        while (booly) {
+            whileValue++;
+            System.out.println("while: " + whileValue);
+        }
+
+        int doWhileValue = 0;
+
+        do {
+            doWhileValue++;
+            System.out.println("do-while: " + doWhileValue);
+        } while (booly);
+
+        //ODP: Różnica jest taka, ze do-while wykona się przynajmniej jeden raz w przeciwnosći do pętli while gdzie od początku musi byc spełniony warunek
     }
 
     public void cwiczenie_04() {
