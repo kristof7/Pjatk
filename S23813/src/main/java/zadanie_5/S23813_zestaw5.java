@@ -1,9 +1,5 @@
 package zadanie_5;
 
-import zadanie_4.S23813_zestaw4;
-
-import java.util.Scanner;
-
 public class S23813_zestaw5 {
 
     public static void main(String[] args) {
@@ -141,7 +137,11 @@ public class S23813_zestaw5 {
     public void cwiczenie_07() {
         System.out.println("Cwiczenie_07\n");
 
+        String trojkat = "";
+        for (int i = 0; i < 5; i++) {
+            trojkat += "*";
+            System.out.println(trojkat);
+        }
     }
-
 }
 
