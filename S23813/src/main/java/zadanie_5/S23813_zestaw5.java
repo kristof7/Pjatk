@@ -27,6 +27,17 @@ public class S23813_zestaw5 {
     public void cwiczenie_01() {
         System.out.println("Cwiczenie_01\n");
 
+        int K = 987654321;
+
+        String s = "";
+
+        while (K != 0) {
+            int cyfra = K % 10;
+            s += cyfra;
+            K /= 10;
+        }
+        System.out.println("s wynosi: " + s);
+        System.out.println("K wynosi: " + K);
     }
 
     public void cwiczenie_02() {
