@@ -106,6 +106,36 @@ public class S23813_zestaw5 {
     public void cwiczenie_06() {
         System.out.println("Cwiczenie_06\n");
 
+        int a = -1500;
+        int b = 1500;
+
+        System.out.println(b + " podzielne przez 2 bez reszty:\n");
+        for (int i = 0; i < b; i++) {
+            if (i % 2 == 0) {
+                System.out.print(i + ", ");
+            }
+        }
+        System.out.println("\n");
+        System.out.println(b + " podzielne przez 3 bez reszty:\n");
+        for (int i = 0; i < b; i++) {
+            if (i % 3 == 0) {
+                System.out.print(i + ", ");
+            }
+        }
+        System.out.println("\n");
+        System.out.println(a + " podzielne przez 2 bez reszty:\n");
+        for (int i = 0; i > a; i--) {
+            if (i % 2 == 0) {
+                System.out.print(i + ", ");
+            }
+        }
+        System.out.println("\n");
+        System.out.println(a + " podzielne przez 3 bez reszty:\n");
+        for (int i = 0; i > a; i--) {
+            if (i % 3 == 0) {
+                System.out.print(i + ", ");
+            }
+        }
     }
 
     public void cwiczenie_07() {
