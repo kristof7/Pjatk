@@ -81,6 +81,12 @@ public class S23813_zestaw5 {
     public void cwiczenie_04() {
         System.out.println("Cwiczenie_04\n");
 
+        int n = 0;
+        for (int i = 1; i <= 10; i++) {
+            double power = Math.pow(2, n);
+            System.out.println(i + ".  " + 1 / power);
+            n++;
+        }
     }
 
     public void cwiczenie_05() {
