@@ -43,6 +43,17 @@ public class S23813_zestaw5 {
     public void cwiczenie_02() {
         System.out.println("Cwiczenie_02\n");
 
+//        int s = 0;
+//        for (int i = 1; i <= 10; i++)
+//            s = s + i;
+
+        // Zmodyfikowany powyższy kod pod pętle while
+        int s = 0;
+        int i = 1;
+        while (i <= 10) {
+            s += i;
+            i++;
+        }
     }
 
     public void cwiczenie_03() {
