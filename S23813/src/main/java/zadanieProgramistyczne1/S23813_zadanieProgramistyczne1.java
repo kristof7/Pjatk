@@ -1,17 +1,25 @@
 package zadanieProgramistyczne1;
 
+import java.util.Scanner;
+
 public class S23813_zadanieProgramistyczne1 {
     public static void main(String[] args) {
 
-        int a = 3;
-        int b = 10000;
-        int c = 8;
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("\nProgram do obliczania a-tej liczby znaczącej ilorazu dwóch liczb b/c. Zostaniesz poproszony/poproszona o wprowadzenie trzech liczb a,b,c.\n");
+        System.out.println("Wprowadz a-tą cyfrę znaczącą:");
+        int a = scanner.nextInt();
+        System.out.println("Wprowadź liczbę b:");
+        int b = scanner.nextInt();
+        System.out.println("Wprowadź liczbę c:");
+        int c = scanner.nextInt();
 
         double operation = (double) b / c;
         int[] result = new int[a];
         int count = 0;
 
-        System.out.println("a-ta cyfra znacząca dla " + b + "/" + c + " wynosi: " + operation);
+        System.out.println("Wynik dzielenia dla liczb " + b + "/" + c + " wynosi: " + operation);
 
         String[] stringTable = String.format("%.10f", operation).replace(",", "").split("");
 
