@@ -130,5 +130,14 @@ public class S23813_zestaw6 {
     public void cwiczenie_08() {
         System.out.println("Cwiczenie_07\n");
 
+        char[] litery = {'a', 'b', 'd', 'z', 'x', 'y', 's', 'e', 'j'};
+        char[] literyMirror = new char[litery.length];
+        int count = 0;
+
+        for (int i = literyMirror.length - 1; i >= 0; i--) {
+            literyMirror[count] = litery[i];
+            System.out.print(literyMirror[count] + ", ");
+            count++;
+        }
     }
 }
