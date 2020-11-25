@@ -69,6 +69,28 @@ public class S23813_zestaw6 {
     public void cwiczenie_04() {
         System.out.println("Cwiczenie_04\n");
 
+        double[] douTable = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+
+        System.out.println("Wypełnienie tablicy losowymi liczbami z zakresu od 1-9 i wyświetlenie ich:");
+        for (int i = 0; i < douTable.length; i++) {
+            double rand = (Math.random() * 9) + 1;
+            douTable[i] = rand;
+            System.out.println(douTable[i]);
+        }
+        System.out.println("Liczby o parzystym indeksie w tablicy:");
+        for (int i = 0; i < douTable.length; i++) {
+            if ((i + 1) % 2 == 0) {
+                System.out.print(douTable[i] + ", ");
+            }
+        }
+        System.out.println("");
+        System.out.println("Liczby nieparzyste z przekonwertowanych na typ 'int' liczb w tablicy:");
+        for (int i = 0; i < douTable.length; i++) {
+            int roundedDouble = (int) Math.round(douTable[i]);
+            if (roundedDouble % 2 != 0) {
+                System.out.print(roundedDouble + ", ");
+            }
+        }
     }
 
     public void cwiczenie_05() {
