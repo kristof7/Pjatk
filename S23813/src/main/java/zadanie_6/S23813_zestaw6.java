@@ -19,6 +19,8 @@ public class S23813_zestaw6 {
         s23813_zestaw6.cwiczenie_06();
         System.out.println("\n------------------------------------------------");
         s23813_zestaw6.cwiczenie_07();
+        System.out.println("\n------------------------------------------------");
+        s23813_zestaw6.cwiczenie_08();
     }
 
     public void cwiczenie_01() {
@@ -95,15 +97,33 @@ public class S23813_zestaw6 {
 
     public void cwiczenie_05() {
         System.out.println("Cwiczenie_05\n");
+//        int tab[];
+        int tab[] = new int[0];
+        System.out.println(tab);
+        // zmienna o nazwie tabpowinna zostać zadeklarowana, bez tego wystąpi błąd, jeżeli się zadeklaruje to pokazuje się kod tablicy
 
     }
 
     public void cwiczenie_06() {
         System.out.println("Cwiczenie_06\n");
 
+        int tab[] = {789, 678, 567};
+
+        for (int i = 0; i < tab.length; i++) {
+            for (int j = 0; j < tab.length; j++) {
+                System.out.println(tab[i] + tab[j]);
+            }
+        }
+        // wynik jest sumą poszczególnych elementów z tablicy: 1z1, 1z2, 1,3, 2z1, 2z2, 2z3, 3z1, 3z2, 3z3
+
     }
 
     public void cwiczenie_07() {
+        System.out.println("Cwiczenie_07\n");
+
+    }
+
+    public void cwiczenie_08() {
         System.out.println("Cwiczenie_07\n");
 
     }
