@@ -121,6 +121,10 @@ public class S23813_zestaw6 {
     public void cwiczenie_07() {
         System.out.println("Cwiczenie_07\n");
 
+        String[] slowa = {
+                "Ala", "kota", "ma", "ma", "a", "kot", "Ale"
+        };
+        System.out.println(slowa[0] + " " + slowa[2] + " " + slowa[1] + " " + slowa[4] + " " + slowa[5] + " " + slowa[3] + " " + slowa[6]);
     }
 
     public void cwiczenie_08() {
