@@ -1,10 +1,10 @@
 package projekt1_warcaby;
 
 public class S23813P01 {
-    public static long pionki1 = 0b011111111;
-    public static long pionki2 = 0b111111111;
-    public static long maska = 0;
-
+    public static long pionkiCzarne1 = 0b100001001100011001100010010100001011100011011100010100L;
+    public static long pionkiCzarne2 = 0b100001100100011100100010101100001110100011110100010111L;
+    public static long pionkiBiale1 = 0b101101001101111001101110010101101011101111011101110100L;
+    public static long pionkiBiale2 = 0b101101100101111100101110101101101110101111110101110111L;
     public static String bp = "\u2B1B";
     public static String czp = "\u2B1C";
     public static String czPion = "\u2659";
@@ -24,7 +24,7 @@ public class S23813P01 {
         System.out.print("Y 1 2 3 4 5 6 7 8 X");
         System.out.println("");
         Boolean czyZbity = false;
-        Boolean czyPionek = true;
+        Boolean czyDamka = false;
         Boolean czyBialy = false;
         for (int y = 8; y >= 1; y--) {
             System.out.print(y + " ");
@@ -33,8 +33,11 @@ public class S23813P01 {
             for (int x = 1; x <= 8; x++) {
                 boolean czyParzystyX = (x % 2) == 0;
                 pole = zapisPlanszy(czyParzystyX, czyParzystyY);
-                pole = zapisCzarnychPionków(x, y, 1, 1, pole, czyBialy, czyPionek, czyZbity);
+
+                pole = zapisPionków(x, y, pole, pionkiCzarne1, pionkiCzarne2, pionkiBiale1, pionkiBiale2);
+
                 System.out.print(pole + " ");
+
             }
             System.out.println("");
         }
@@ -44,89 +47,104 @@ public class S23813P01 {
 
 
     public static String zapisPlanszy(boolean czyParzystyX, boolean czyParzystyY) {
-
+        String pole = "";
         if (czyParzystyY)
-            if (czyParzystyX)
-                return czp;
-            else
-                return bp;
+            if (czyParzystyX) {
+                pole = czp;
+                return pole;
+            } else {
+                pole = bp;
+                return pole;
+            }
         else {
-            if (czyParzystyX)
-                return bp;
-            else
-                return czp;
-        }
-    }
-
-    public static String zapisCzarnychPionków(int pozX, int pozY, int pionX, int pionY, String pole, Boolean czyBialy, Boolean czyPionek, Boolean czyZbity) {
-        String result;
-        String starePole = pole;
-
-        for (int zm = 0; zm <= 3; zm++) {
-            maska = pionki1 >> zm;
-            for (int i = 0; i <= 5; i++) {
-                if (pozX == pionX && pozY == pionY) {
-                    if ((maska & zm) == 0) {
-                        pionki1 = maska;
-                    }
-                    if ((maska & zm) == 1) {
-                        pionki1 = maska ^ 1;
-                        pole = czPion;
-                    }
-                    if ((maska & zm) == 2) {
-                        pionki1 = maska ^ 1;
-                    }
-                    if ((maska & zm) == 3) {
-                        int valueX = 0;
-                        int valueY = 0;
-                        switch (pionX){
-                            case 1:
-                                valueX = 0b001;
-                                break;
-                            case 2:
-                                valueX = 0b010;
-                                break;
-                            case 3:
-                                valueX = 0b011;
-                                break;
-                            case 4:
-                                valueX = 0b100;
-                                break;
-                            case 5:
-                                valueX = 0b101;
-                                break;
-                            case 6:
-                                valueX = 0b110;
-                                break;
-                        }
-                        switch (pionY){
-                            case 1:
-                                valueY = 0b001;
-                                break;
-                            case 2:
-                                valueY = 0b010;
-                                break;
-                            case 3:
-                                valueY = 0b011;
-                                break;
-                            case 4:
-                                valueY = 0b100;
-                                break;
-                            case 5:
-                                valueY = 0b101;
-                                break;
-                            case 6:
-                                valueY = 0b110;
-                                break;
-                        }
-                        pionki1 = maska ^ (valueX + valueY);
-                    }
-                }
+            if (czyParzystyX) {
+                pole = bp;
+                return pole;
+            } else {
+                pole = czp;
+                return pole;
             }
         }
-        if (!czyZbity) {
-            return pole;
-        }
-        return starePole;
     }
+
+    public static String zapisPionków(int pozX, int pozY, String pole, long i, long j, long b, long c) {
+        long polozenie = 0b111L;
+
+        int pionX = 0;
+        int pionY = 0;
+
+        for (i = 0; i < 6; i++) {
+
+            int wspX = (int) ((pionkiCzarne1 >> 9 * i) & polozenie);
+            int wspY = (int) ((pionkiCzarne1 >> 9 * i + 3) & polozenie);
+            long czyBialy = ((pionkiCzarne1 >> 9 * i + 6) & 1);
+            long czyDamka = ((pionkiCzarne1 >> 9 * i + 7) & 1);
+            long czyZbity = ((pionkiCzarne1 >> 9 * i + 8) & 1);
+
+            if (pozX == wspX && pozY == wspY) {
+                if (czyBialy == 1) {
+                    pole = bPion;
+                } else {
+                    pole = czPion;
+                }
+            }
+
+        }
+        for (j = 0; j < 6; j++) {
+
+            int wspX = (int) ((pionkiCzarne2 >> 9 * j) & polozenie) + 1;
+            int wspY = (int) ((pionkiCzarne2 >> 9 * j + 3) & polozenie);
+            long czyBialy = ((pionkiCzarne2 >> 9 * j + 6) & 1);
+            long czyDamka = ((pionkiCzarne2 >> 9 * j + 7) & 1);
+            long czyZbity = ((pionkiCzarne2 >> 9 * j + 8) & 1);
+
+            if (pozX == wspX && pozY == wspY) {
+                if (czyBialy == 1) {
+                    pole = bPion;
+                } else {
+                    pole = czPion;
+                }
+            }
+
+        }
+
+        for (b = 0; b < 6; b++) {
+
+            int wspX = (int) ((pionkiBiale1 >> 9 * b) & polozenie);
+            int wspY = (int) ((pionkiBiale1 >> 9 * b + 3) & polozenie) + 1;
+            long czyBialy = ((pionkiBiale1 >> 9 * b + 6) & 1);
+            long czyDamka = ((pionkiBiale1 >> 9 * b + 7) & 1);
+            long czyZbity = ((pionkiBiale1 >> 9 * b + 8) & 1);
+
+            if (pozX == wspX && pozY == wspY) {
+                if (czyBialy == 1) {
+                    pole = bPion;
+                } else {
+                    pole = czPion;
+                }
+            }
+
+        }
+        for (c = 0; c < 6; c++) {
+
+            int wspX = (int) ((pionkiBiale2 >> 9 * c) & polozenie) + 1;
+            int wspY = (int) ((pionkiBiale2 >> 9 * c + 3) & polozenie) + 1;
+            long czyBialy = ((pionkiBiale2 >> 9 * c + 6) & 1);
+            long czyDamka = ((pionkiBiale2 >> 9 * c + 7) & 1);
+            long czyZbity = ((pionkiBiale2 >> 9 * c + 8) & 1);
+
+            if (pozX == wspX && pozY == wspY) {
+                if (czyBialy == 1) {
+                    pole = bPion;
+                } else {
+                    pole = czPion;
+                }
+            }
+
+        }
+
+
+        return pole;
+    }
+
 }
