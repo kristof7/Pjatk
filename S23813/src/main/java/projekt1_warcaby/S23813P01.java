@@ -23,9 +23,6 @@ public class S23813P01 {
         System.out.println("\n-----------------------------------------------------------------------------\n");
         System.out.print("Y 1 2 3 4 5 6 7 8 X");
         System.out.println("");
-        Boolean czyZbity = false;
-        Boolean czyDamka = false;
-        Boolean czyBialy = false;
         for (int y = 8; y >= 1; y--) {
             System.out.print(y + " ");
             boolean czyParzystyY = (y % 2) == 0;
@@ -33,18 +30,13 @@ public class S23813P01 {
             for (int x = 1; x <= 8; x++) {
                 boolean czyParzystyX = (x % 2) == 0;
                 pole = zapisPlanszy(czyParzystyX, czyParzystyY);
-
                 pole = zapisPionków(x, y, pole, pionkiCzarne1, pionkiCzarne2, pionkiBiale1, pionkiBiale2);
-
                 System.out.print(pole + " ");
-
             }
             System.out.println("");
         }
         System.out.println("\n-----------------------------------------------------------------------------\n");
-
     }
-
 
     public static String zapisPlanszy(boolean czyParzystyX, boolean czyParzystyY) {
         String pole = "";
@@ -67,19 +59,16 @@ public class S23813P01 {
         }
     }
 
-    public static String zapisPionków(int pozX, int pozY, String pole, long i, long j, long b, long c) {
+    public static String zapisPionków(int pozX, int pozY, String pole, long cz1, long cz2, long b1, long b2) {
         long polozenie = 0b111L;
 
-        int pionX = 0;
-        int pionY = 0;
+        for (cz1 = 0; cz1 < 6; cz1++) {
 
-        for (i = 0; i < 6; i++) {
-
-            int wspX = (int) ((pionkiCzarne1 >> 9 * i) & polozenie);
-            int wspY = (int) ((pionkiCzarne1 >> 9 * i + 3) & polozenie);
-            long czyBialy = ((pionkiCzarne1 >> 9 * i + 6) & 1);
-            long czyDamka = ((pionkiCzarne1 >> 9 * i + 7) & 1);
-            long czyZbity = ((pionkiCzarne1 >> 9 * i + 8) & 1);
+            int wspX = (int) ((pionkiCzarne1 >> 9 * cz1) & polozenie);
+            int wspY = (int) ((pionkiCzarne1 >> 9 * cz1 + 3) & polozenie);
+            long czyBialy = ((pionkiCzarne1 >> 9 * cz1 + 6) & 1);
+            long czyDamka = ((pionkiCzarne1 >> 9 * cz1 + 7) & 1);
+            long czyZbity = ((pionkiCzarne1 >> 9 * cz1 + 8) & 1);
 
             if (pozX == wspX && pozY == wspY) {
                 if (czyBialy == 1) {
@@ -88,15 +77,15 @@ public class S23813P01 {
                     pole = czPion;
                 }
             }
-
         }
-        for (j = 0; j < 6; j++) {
 
-            int wspX = (int) ((pionkiCzarne2 >> 9 * j) & polozenie) + 1;
-            int wspY = (int) ((pionkiCzarne2 >> 9 * j + 3) & polozenie);
-            long czyBialy = ((pionkiCzarne2 >> 9 * j + 6) & 1);
-            long czyDamka = ((pionkiCzarne2 >> 9 * j + 7) & 1);
-            long czyZbity = ((pionkiCzarne2 >> 9 * j + 8) & 1);
+        for (cz2 = 0; cz2 < 6; cz2++) {
+
+            int wspX = (int) ((pionkiCzarne2 >> 9 * cz2) & polozenie) + 1;
+            int wspY = (int) ((pionkiCzarne2 >> 9 * cz2 + 3) & polozenie);
+            long czyBialy = ((pionkiCzarne2 >> 9 * cz2 + 6) & 1);
+            long czyDamka = ((pionkiCzarne2 >> 9 * cz2 + 7) & 1);
+            long czyZbity = ((pionkiCzarne2 >> 9 * cz2 + 8) & 1);
 
             if (pozX == wspX && pozY == wspY) {
                 if (czyBialy == 1) {
@@ -105,16 +94,15 @@ public class S23813P01 {
                     pole = czPion;
                 }
             }
-
         }
 
-        for (b = 0; b < 6; b++) {
+        for (b1 = 0; b1 < 6; b1++) {
 
-            int wspX = (int) ((pionkiBiale1 >> 9 * b) & polozenie);
-            int wspY = (int) ((pionkiBiale1 >> 9 * b + 3) & polozenie) + 1;
-            long czyBialy = ((pionkiBiale1 >> 9 * b + 6) & 1);
-            long czyDamka = ((pionkiBiale1 >> 9 * b + 7) & 1);
-            long czyZbity = ((pionkiBiale1 >> 9 * b + 8) & 1);
+            int wspX = (int) ((pionkiBiale1 >> 9 * b1) & polozenie);
+            int wspY = (int) ((pionkiBiale1 >> 9 * b1 + 3) & polozenie) + 1;
+            long czyBialy = ((pionkiBiale1 >> 9 * b1 + 6) & 1);
+            long czyDamka = ((pionkiBiale1 >> 9 * b1 + 7) & 1);
+            long czyZbity = ((pionkiBiale1 >> 9 * b1 + 8) & 1);
 
             if (pozX == wspX && pozY == wspY) {
                 if (czyBialy == 1) {
@@ -123,15 +111,14 @@ public class S23813P01 {
                     pole = czPion;
                 }
             }
-
         }
-        for (c = 0; c < 6; c++) {
+        for (b2 = 0; b2 < 6; b2++) {
 
-            int wspX = (int) ((pionkiBiale2 >> 9 * c) & polozenie) + 1;
-            int wspY = (int) ((pionkiBiale2 >> 9 * c + 3) & polozenie) + 1;
-            long czyBialy = ((pionkiBiale2 >> 9 * c + 6) & 1);
-            long czyDamka = ((pionkiBiale2 >> 9 * c + 7) & 1);
-            long czyZbity = ((pionkiBiale2 >> 9 * c + 8) & 1);
+            int wspX = (int) ((pionkiBiale2 >> 9 * b2) & polozenie) + 1;
+            int wspY = (int) ((pionkiBiale2 >> 9 * b2 + 3) & polozenie) + 1;
+            long czyBialy = ((pionkiBiale2 >> 9 * b2 + 6) & 1);
+            long czyDamka = ((pionkiBiale2 >> 9 * b2 + 7) & 1);
+            long czyZbity = ((pionkiBiale2 >> 9 * b2 + 8) & 1);
 
             if (pozX == wspX && pozY == wspY) {
                 if (czyBialy == 1) {
@@ -140,11 +127,7 @@ public class S23813P01 {
                     pole = czPion;
                 }
             }
-
         }
-
-
         return pole;
     }
-
 }
