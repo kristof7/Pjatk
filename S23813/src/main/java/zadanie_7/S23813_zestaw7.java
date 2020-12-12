@@ -1,5 +1,7 @@
 package zadanie_7;
 
+import java.util.Arrays;
+
 public class S23813_zestaw7 {
     public static void main(String[] args) {
         S23813_zestaw7 s23813_zestaw7 = new S23813_zestaw7();
@@ -107,6 +109,23 @@ public class S23813_zestaw7 {
 
     public void cwiczenie_04() {
         System.out.println("Cwiczenie_04\n");
+
+        int[][] tablicaDwu = new int[10][10];
+
+        for (int i = 0; i < tablicaDwu.length; i++) {
+            for (int j = 0; j < tablicaDwu[1].length; j++) {
+                int random = (int) ((Math.random() * 10));
+
+                tablicaDwu[i][j] = random;
+                System.out.print(tablicaDwu[i][j] + " ");
+            }
+            System.out.println("");
+        }
+        System.out.println("Posortowana tablica:");
+        for (int i = 0; i < tablicaDwu.length; i++) {
+            Arrays.sort(tablicaDwu[i]);
+            System.out.println(Arrays.toString(tablicaDwu[i]));
+        }
     }
 
 }
