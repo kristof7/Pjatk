@@ -68,6 +68,37 @@ public class S23813_zestaw7 {
 
     public void cwiczenie_02() {
         System.out.println("Cwiczenie_02\n");
+
+        int[][] tablicaDwu = new int[8][8];
+
+        for (int i = 0; i < tablicaDwu.length; i++) {
+            for (int j = 0; j < tablicaDwu[1].length; j++) {
+                int random = (int) ((Math.random() * 11));
+                tablicaDwu[i][j] = random;
+                System.out.print(tablicaDwu[i][j] + " ");
+            }
+            System.out.println("");
+        }
+        System.out.println("\n------------------------\n");
+
+        int[] count = new int[8];
+        for (int i = 0; i < 8; i++) {
+            count[i] = i;
+        }
+
+        for (int i = 0; i < tablicaDwu.length; i++) {
+
+            for (int j = 0; j < tablicaDwu[1].length; j++) {
+
+                if (tablicaDwu[i][j++] == count[i] && j < 8) {
+                    count[i]++;
+                    if (count[i] == 3) {
+                        System.out.println("liczba: " + i + " się powtarza 3 lub więcej razy");
+                    }
+                }
+            }
+        }
+
     }
 
     public void cwiczenie_03() {
