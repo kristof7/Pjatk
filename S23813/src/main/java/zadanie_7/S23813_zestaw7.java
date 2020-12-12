@@ -105,6 +105,36 @@ public class S23813_zestaw7 {
 
     public void cwiczenie_03() {
         System.out.println("Cwiczenie_03\n");
+
+        char[][] tab = {
+                {'S', 'a', 'm', 's', 'u', 'n', 'g'},
+                {'N', 'o', 'k', 'i', 'a'},
+                {'A', 'p', 'p', 'l', 'e'},
+                {'B', 'l', 'a', 'c', 'k', 'B', 'e', 'r', 'r', 'y'},
+                {'A', 'l', 'c', 'a', 't', 'e', 'l'},
+                {'S', 'o', 'n', 'y'},
+                {'J', 'o', 'l', 'l', 'a'}
+        };
+
+        String alfabet = "abcdefghijklmnopqrstuwz";
+        int[] count = new int[23];
+        for (int i = 0; i < 23; i++) {
+            count[i] = i;
+        }
+
+        for (int i = 0; i < tab.length; i++) {
+
+            for (int j = 0; j < tab[i].length; j++) {
+                for (int k = 0; k < alfabet.length(); k++) {
+                    if (alfabet.contains(String.valueOf(tab[i][j]).toLowerCase())) {
+                        ++count[k];
+                        if (count[k] == 2) {
+                            System.out.println("litera: " + tab[i][j] + " się powtarza 2 lub więcej razy");
+                        }
+                    }
+                }
+            }
+        }
     }
 
     public void cwiczenie_04() {
