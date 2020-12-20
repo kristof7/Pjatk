@@ -7,7 +7,8 @@ public class S23813_zestaw8 {
         System.out.println("\n------------------------------------------------");
         s23813_zestaw8.show(7);
         System.out.println("\n------------------------------------------------");
-        s23813_zestaw8.cwiczenie_02();
+        Integer wrt = 7;
+        s23813_zestaw8.modifyValue(wrt);
         System.out.println("\n------------------------------------------------");
         s23813_zestaw8.cwiczenie_03();
         System.out.println("\n------------------------------------------------");
@@ -22,8 +23,13 @@ public class S23813_zestaw8 {
         System.out.println(value);
     }
 
-    public void cwiczenie_02() {
+    public void modifyValue(Integer wrt) {
         System.out.println("Cwiczenie_02\n");
+        System.out.println("wartość dostarczanej zmiennej= "+wrt);
+        wrt *= 5;
+        System.out.println("wartość dostarczanej zmiennej pomnożone * 5= "+wrt);
+
+        //metoda modyfikuje dostarczaną wqartość jeżeli taki był zamierzony cel/rezultat który programista chciał uzyskać
     }
 
     public void cwiczenie_03() {
