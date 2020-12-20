@@ -21,14 +21,14 @@ public class S23813_zestaw8 {
         System.out.println("\n------------------------------------------------");
 
         int randomNumber1 = (int) ((Math.random() * 9) + 1);
-        Integer[] tablicaNumber1 = new Integer[randomNumber1];
-        for (int i = 0; i < randomNumber1; i++) {
+        Integer[] tablicaNumber1 = new Integer[9];
+        for (int i = 0; i < 9; i++) {
             int random = (int) ((Math.random() * randomNumber1) + 1);
             tablicaNumber1[i] = random;
         }
         int randomNumber2 = (int) ((Math.random() * 9) + 1);
-        Integer[] tablicaNumber2 = new Integer[randomNumber2];
-        for (int i = 0; i < randomNumber2; i++) {
+        Integer[] tablicaNumber2 = new Integer[9];
+        for (int i = 0; i < 9; i++) {
             int random = (int) ((Math.random() * randomNumber2) + 1);
             tablicaNumber2[i] = random;
         }
@@ -37,7 +37,7 @@ public class S23813_zestaw8 {
 
 
         System.out.println("\n------------------------------------------------");
-        s23813_zestaw8.cwiczenie_05();
+        s23813_zestaw8.kwadrat(5, 'x');
 
     }
 
@@ -68,14 +68,37 @@ public class S23813_zestaw8 {
         System.out.println("Cwiczenie_04\n");
         Integer[] newTable = new Integer[9];
 
-        for (int i = 0; i < table1.length; i++) {
+        for (int i = 0; i < 9; i++) {
             newTable[i] = table1[i] + table2[i];
             System.out.println(newTable[i]);
         }
     }
 
-    public void cwiczenie_05() {
+    public void kwadrat(Integer iloscZnakow, char pierwszyZnak) {
         System.out.println("Cwiczenie_05\n");
+
+        for (int i = 0; i < iloscZnakow; i++) {
+
+            for (int j = 0; j < iloscZnakow; j++) {
+                if (pierwszyZnak == 'x') {
+                    if (i % 2 == 0) {
+                        System.out.print("x");
+                    } else {
+                        System.out.print("o");
+                    }
+                } else {
+                    if (i % 2 == 0) {
+                        System.out.print("o");
+                    } else {
+                        System.out.print("x");
+                    }
+
+                }
+
+            }
+            System.out.println("");
+
+        }
     }
 
 }
