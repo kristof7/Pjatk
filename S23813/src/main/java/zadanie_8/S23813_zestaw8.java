@@ -19,7 +19,23 @@ public class S23813_zestaw8 {
         s23813_zestaw8.charCount(tablica);
 
         System.out.println("\n------------------------------------------------");
-        s23813_zestaw8.cwiczenie_04();
+
+        int randomNumber1 = (int) ((Math.random() * 9) + 1);
+        Integer[] tablicaNumber1 = new Integer[randomNumber1];
+        for (int i = 0; i < randomNumber1; i++) {
+            int random = (int) ((Math.random() * randomNumber1) + 1);
+            tablicaNumber1[i] = random;
+        }
+        int randomNumber2 = (int) ((Math.random() * 9) + 1);
+        Integer[] tablicaNumber2 = new Integer[randomNumber2];
+        for (int i = 0; i < randomNumber2; i++) {
+            int random = (int) ((Math.random() * randomNumber2) + 1);
+            tablicaNumber2[i] = random;
+        }
+
+        s23813_zestaw8.tablesMethod(tablicaNumber1, tablicaNumber2);
+
+
         System.out.println("\n------------------------------------------------");
         s23813_zestaw8.cwiczenie_05();
 
@@ -48,8 +64,14 @@ public class S23813_zestaw8 {
         System.out.println("Liczba znaków w argumencie= " + count);
     }
 
-    public void cwiczenie_04() {
+    public void tablesMethod(Integer[] table1, Integer[] table2) {
         System.out.println("Cwiczenie_04\n");
+        Integer[] newTable = new Integer[9];
+
+        for (int i = 0; i < table1.length; i++) {
+            newTable[i] = table1[i] + table2[i];
+            System.out.println(newTable[i]);
+        }
     }
 
     public void cwiczenie_05() {
