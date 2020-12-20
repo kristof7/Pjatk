@@ -5,7 +5,7 @@ public class S23813_zestaw8 {
     public static void main(String[] args) {
         S23813_zestaw8 s23813_zestaw8 = new S23813_zestaw8();
         System.out.println("\n------------------------------------------------");
-        s23813_zestaw8.cwiczenie_01();
+        s23813_zestaw8.show(7);
         System.out.println("\n------------------------------------------------");
         s23813_zestaw8.cwiczenie_02();
         System.out.println("\n------------------------------------------------");
@@ -17,8 +17,9 @@ public class S23813_zestaw8 {
 
     }
 
-    public void cwiczenie_01() {
+    public void show(Integer value) {
         System.out.println("Cwiczenie_01\n");
+        System.out.println(value);
     }
 
     public void cwiczenie_02() {
