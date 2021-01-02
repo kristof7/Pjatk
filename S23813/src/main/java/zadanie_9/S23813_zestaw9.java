@@ -54,6 +54,16 @@ public class S23813_zestaw9 {
 	public void cwiczenie_03() {
 		System.out.println("Cwiczenie_03\n");
 
+		Osoba osoba = new Osoba();
+
+		osoba.setImie("Genon");
+		osoba.setNazwisko("Stivens");
+		osoba.setRokUrodzenia(1111);
+
+		System.out.println(osoba.getImie());
+		System.out.println(osoba.getNazwisko());
+		System.out.println(osoba.getRokUrodzenia());
+
 	}
 
 	public void cwiczenie_04() {
@@ -112,5 +122,36 @@ class Number {
 		System.out.println("wartość zmodyfikowanej zmiennej: " + intValue);
 	}
 
+}
+
+class Osoba {
+
+	String imie;
+	String nazwisko;
+	int rokUrodzenia;
+
+	public String getImie() {
+		return imie;
+	}
+
+	public void setImie(String imie) {
+		this.imie=imie;
+	}
+
+	public String getNazwisko() {
+		return nazwisko;
+	}
+
+	public void setNazwisko(String nazwisko) {
+		this.nazwisko=nazwisko;
+	}
+
+	public int getRokUrodzenia() {
+		return rokUrodzenia;
+	}
+
+	public void setRokUrodzenia(int rokUrodzenia) {
+		this.rokUrodzenia=rokUrodzenia;
+	}
 }
 
