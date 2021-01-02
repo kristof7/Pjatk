@@ -68,6 +68,9 @@ public class S23813_zestaw9 {
 
 	public void cwiczenie_04() {
 		System.out.println("Cwiczenie_04\n");
+
+		Osoba o = new Osoba("Steve", "NoJobs", 2222);
+		o.show();
 	}
 
 	public void cwiczenie_05() {
@@ -130,6 +133,16 @@ class Osoba {
 	String nazwisko;
 	int rokUrodzenia;
 
+	public Osoba(String imie, String nazwisko, int rokUrodzenia) {
+		this.imie=imie;
+		this.nazwisko=nazwisko;
+		this.rokUrodzenia=rokUrodzenia;
+	}
+
+	public Osoba() {
+
+	}
+
 	public String getImie() {
 		return imie;
 	}
@@ -152,6 +165,14 @@ class Osoba {
 
 	public void setRokUrodzenia(int rokUrodzenia) {
 		this.rokUrodzenia=rokUrodzenia;
+	}
+
+	public String show() {
+		return "Osoba{" +
+				"imie='" + imie + '\'' +
+				", nazwisko='" + nazwisko + '\'' +
+				", rokUrodzenia=" + rokUrodzenia +
+				'}';
 	}
 }
 
