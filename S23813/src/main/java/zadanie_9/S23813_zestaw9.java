@@ -48,13 +48,12 @@ public class S23813_zestaw9 {
 		methodCurrier2.setValue(charValue);
 		methodCurrier2.setValue(byteValue);
 
-
 	}
 
 	public void cwiczenie_03() {
 		System.out.println("Cwiczenie_03\n");
 
-		Osoba osoba = new Osoba();
+		Osoba osoba=new Osoba();
 
 		osoba.setImie("Genon");
 		osoba.setNazwisko("Stivens");
@@ -70,14 +69,35 @@ public class S23813_zestaw9 {
 		System.out.println("Cwiczenie_04\n");
 
 		Osoba o = new Osoba("Steve", "NoJobs", 2222);
-		o.show();
+		System.out.println(o.show());
 	}
 
 	public void cwiczenie_05() {
 		System.out.println("Cwiczenie_05\n");
+
+		Clpx clpx=new Clpx(4, 3);
+		clpx.add(clpx);
+		System.out.println("liczby:");
+		System.out.println(clpx.add(clpx));
+		System.out.println(clpx.sub(clpx));
+		System.out.println(clpx.mul(clpx));
+		System.out.println("Liczba zespolona: " + clpx.show(clpx));
+		clpx.inc(clpx);
+		System.out.println("");
+		System.out.println("liczby zwiększone o 1:");
+		System.out.println(clpx.add(clpx));
+		System.out.println(clpx.sub(clpx));
+		System.out.println(clpx.mul(clpx));
+		System.out.println("Liczba zespolona: " + clpx.show(clpx));
+		clpx.inc(clpx);
+		System.out.println("");
+		System.out.println("liczby zwiększone ponownie o 1:");
+		System.out.println(clpx.add(clpx));
+		System.out.println(clpx.sub(clpx));
+		System.out.println(clpx.mul(clpx));
+		System.out.println("Liczba zespolona: " + clpx.show(clpx));
+
 	}
-
-
 }
 
 class MethodCurrier {
@@ -118,7 +138,7 @@ class Number {
 	int intValue=7;
 
 	void setValue(int value) {
-		value = intValue;
+		value=intValue;
 	}
 
 	void showValue() {
@@ -174,5 +194,42 @@ class Osoba {
 				", rokUrodzenia=" + rokUrodzenia +
 				'}';
 	}
+}
+
+class Clpx {
+
+	private double val1;
+	private double val2;
+
+	public Clpx(double val1, double val2) {
+		this.val1=val1;
+		this.val2=val2;
+	}
+
+	public double add(Clpx clpx) {
+		double result=clpx.val1 + clpx.val2;
+		return result;
+	}
+
+	public double sub(Clpx clpx) {
+		double result=clpx.val1 - clpx.val2;
+		return result;
+	}
+
+	public double mul(Clpx clpx) {
+		double result=clpx.val1 * clpx.val2;
+		return result;
+	}
+
+	public void inc(Clpx clpx) {
+		clpx.val1+=1;
+		clpx.val2+=1;
+	}
+
+	public double show(Clpx clpx) {
+		double result=4 + 5 * (clpx.val1);
+		return result;
+	}
+
 }
 
