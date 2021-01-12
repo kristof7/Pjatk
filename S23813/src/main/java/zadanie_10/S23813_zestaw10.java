@@ -46,6 +46,8 @@ public class S23813_zestaw10 {
 	public void cwiczenie_04() {
 		System.out.println("Cwiczenie_04\n");
 
+		System.out.println(new Drzewo(true, 12, "przekrój poprzeczny").toString());
+
 	}
 
 	public void cwiczenie_05() {
@@ -201,5 +203,26 @@ class Graniastoslup extends Trojkat {
 		double objetosc=(polePowierzchni * this.wysokosc);
 		System.out.println("Pole powierzchni graniastosłupa: " + polePowierzchni);
 		System.out.println("Objetosc graniastosłupa: " + objetosc);
+	}
+}
+
+class Drzewo {
+	boolean wiecznieZielone;
+	int wysokosc;
+	String przekrojDrzewa;
+
+	public Drzewo(boolean wiecznieZielone, int wysokosc, String przekrojDrzewa) {
+		this.wiecznieZielone=wiecznieZielone;
+		this.wysokosc=wysokosc;
+		this.przekrojDrzewa=przekrojDrzewa;
+	}
+
+	@Override
+	public String toString() {
+		return "Drzewo{" +
+				"wiecznieZielone=" + wiecznieZielone +
+				", wysokosc=" + wysokosc +
+				", przekrojDrzewa='" + przekrojDrzewa + '\'' +
+				'}';
 	}
 }
