@@ -19,6 +19,9 @@ public class S23813_zestaw10 {
 	public void cwiczenie_01() {
 		System.out.println("Cwiczenie_01\n");
 
+		new Kwadrat(3);
+		new Kwadrat(3).show();
+
 	}
 
 	public void cwiczenie_02() {
@@ -41,5 +44,20 @@ public class S23813_zestaw10 {
 
 	}
 
+}
 
+class Kwadrat {
+
+	private int bok;
+
+	public Kwadrat(int bok) {
+		this.bok=bok;
+	}
+
+	public void show() {
+		int polePowierzchniKwadratu=this.bok * this.bok;
+		int obietoscKwadratu=this.bok * this.bok * this.bok;
+		System.out.println("Pole powierzchni kwadratu: " + polePowierzchniKwadratu);
+		System.out.println("Objętość kwadratu: " + obietoscKwadratu);
+	}
 }
