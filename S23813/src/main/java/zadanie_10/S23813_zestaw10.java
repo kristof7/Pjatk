@@ -53,6 +53,10 @@ public class S23813_zestaw10 {
 	public void cwiczenie_05() {
 		System.out.println("Cwiczenie_05\n");
 
+		System.out.println(new DrzewoIglaste(true, 12, "przekrój poprzeczny", 100, 4.5).toString());
+		System.out.println(new DrzewoLisciaste(true, 12, "przekrój poprzeczny", "owalny").toString());
+		System.out.println(new DrzewoOwocowe(true, 12, "przekrój poprzeczny", "owalny", "jabłko").toString());
+
 	}
 
 }
@@ -223,6 +227,68 @@ class Drzewo {
 				"wiecznieZielone=" + wiecznieZielone +
 				", wysokosc=" + wysokosc +
 				", przekrojDrzewa='" + przekrojDrzewa + '\'' +
+				'}';
+	}
+}
+
+class DrzewoIglaste extends Drzewo {
+	int iloscIgiel;
+	double dluigoscSzyszki;
+
+	public DrzewoIglaste(boolean wiecznieZielone, int wysokosc, String przekrojDrzewa, int iloscIgiel, double dluigoscSzyszki) {
+		super(wiecznieZielone, wysokosc, przekrojDrzewa);
+		this.iloscIgiel=iloscIgiel;
+		this.dluigoscSzyszki=dluigoscSzyszki;
+	}
+
+
+	@Override
+	public String toString() {
+		return "DrzewoIglaste{" +
+				"wiecznieZielone=" + wiecznieZielone +
+				", wysokosc=" + wysokosc +
+				", przekrojDrzewa='" + przekrojDrzewa + '\'' +
+				", iloscIgiel=" + iloscIgiel +
+				", dluigoscSzyszki=" + dluigoscSzyszki +
+				'}';
+	}
+}
+
+class DrzewoLisciaste extends Drzewo {
+	String ksztaltLiscia;
+
+	public DrzewoLisciaste(boolean wiecznieZielone, int wysokosc, String przekrojDrzewa, String ksztaltLiscia) {
+		super(wiecznieZielone, wysokosc, przekrojDrzewa);
+		this.ksztaltLiscia=ksztaltLiscia;
+	}
+
+	@Override
+	public String toString() {
+		return "DrzewoLisciaste{" +
+				"wiecznieZielone=" + wiecznieZielone +
+				", wysokosc=" + wysokosc +
+				", przekrojDrzewa='" + przekrojDrzewa + '\'' +
+				", ksztaltLiscia='" + ksztaltLiscia + '\'' +
+				'}';
+	}
+}
+
+class DrzewoOwocowe extends DrzewoLisciaste {
+	String nazwaOwoca;
+
+	public DrzewoOwocowe(boolean wiecznieZielone, int wysokosc, String przekrojDrzewa, String ksztaltLiscia, String nazwaOwoca) {
+		super(wiecznieZielone, wysokosc, przekrojDrzewa, ksztaltLiscia);
+		this.nazwaOwoca=nazwaOwoca;
+	}
+
+	@Override
+	public String toString() {
+		return "DrzewoOwocowe{" +
+				"wiecznieZielone=" + wiecznieZielone +
+				", wysokosc=" + wysokosc +
+				", przekrojDrzewa='" + przekrojDrzewa + '\'' +
+				", ksztaltLiscia='" + ksztaltLiscia + '\'' +
+				", nazwaOwoca='" + nazwaOwoca + '\'' +
 				'}';
 	}
 }
