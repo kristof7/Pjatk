@@ -27,6 +27,9 @@ public class S23813_zestaw10 {
 	public void cwiczenie_02() {
 		System.out.println("Cwiczenie_02\n");
 
+		new Walec(3, 4);
+		new Walec(3, 4).show();
+
 	}
 
 	public void cwiczenie_03() {
@@ -59,5 +62,23 @@ class Kwadrat {
 		int obietoscKwadratu=this.bok * this.bok * this.bok;
 		System.out.println("Pole powierzchni kwadratu: " + polePowierzchniKwadratu);
 		System.out.println("Objętość kwadratu: " + obietoscKwadratu);
+	}
+}
+
+class Walec {
+
+	private int promien;
+	private int wysokosc;
+
+	public Walec(int promien, int wysokosc) {
+		this.promien=promien;
+		this.wysokosc=wysokosc;
+	}
+
+	public void show() {
+		double polePowierzchniPodstawy=(Math.PI * (this.promien * this.promien));
+		double obietoscWalca=(Math.PI * (this.promien * this.promien * this.wysokosc));
+		System.out.println("Pole powierzchni podstawy walca: " + polePowierzchniPodstawy);
+		System.out.println("Objętość walca: " + obietoscWalca);
 	}
 }
