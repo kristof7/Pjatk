@@ -13,7 +13,6 @@ public class S23813_p02 {
 		wardrobe.elements[2]=workshop.getNuts();
 		wardrobe.elements[3]=workshop.getPads();
 
-
 		for(int i=0; i < 4; i++) {
 			for(int j=0; j < 3; j++) {
 				if(i == 0)
@@ -27,11 +26,13 @@ public class S23813_p02 {
 				}
 			}
 		}
-		for(int i=0; i < 4; i++) {
-			for(int j=0; j < 3; j++) {
-				System.out.println(wardrobe.elements[i][j]);
-			}
-		}
+		System.out.println("Wardrobe with elements:\n");
+		wardrobe.showElements();
+		System.out.println("\nSearched elements depend of the given parameter:\n");
+		System.out.println(wardrobe.findElement("DIN9"));
+		System.out.println(wardrobe.findElement("DIN9", "brass"));
+		System.out.println(wardrobe.findElement("DIN9", "brass", 5.6));
+		System.out.println(wardrobe.findElement("DIN9", "brass", 5.6, "galvanized"));
 	}
 }
 
@@ -39,6 +40,70 @@ class Wardrobe extends Workshop {
 
 	Element[][] elements=new Element[4][3];
 
+
+	public void showElements() {
+		for(int i=0; i < 4; i++) {
+			for(int j=0; j < 3; j++) {
+				System.out.println(elements[i][j]);
+			}
+		}
+	}
+
+	public Element findElement(String name) {
+		if(name != null) {
+			for(int i=0; i < 4; i++) {
+				for(int j=0; j < 3; j++) {
+					if(elements[i][j] != null)
+						if(elements[i][j].name.contains(name)) {
+							return elements[i][j];
+						}
+				}
+			}
+		}
+		return findElement(name, null);
+	}
+
+	public Element findElement(String name, String material) {
+		if(name != null) {
+			for(int i=0; i < 4; i++) {
+				for(int j=0; j < 3; j++) {
+					if(elements[i][j] != null)
+						if(elements[i][j].material.contains(material)) {
+							return elements[i][j];
+						}
+				}
+			}
+		}
+		return findElement(name, null, null);
+	}
+
+	public Element findElement(String name, String material, Double materialClass) {
+		if(name != null) {
+			for(int i=0; i < 4; i++) {
+				for(int j=0; j < 3; j++) {
+					if(elements[i][j] != null)
+						if(elements[i][j].materialClass.equals(materialClass)) {
+							return elements[i][j];
+						}
+				}
+			}
+		}
+		return findElement(name, null, null, null);
+	}
+
+	public Element findElement(String name, String material, Double materialClass, String corrosionProtection) {
+		if(name != null) {
+			for(int i=0; i < 4; i++) {
+				for(int j=0; j < 3; j++) {
+					if(elements[i][j] != null)
+						if(elements[i][j].corrosionProtection.startsWith(corrosionProtection)) {
+							return elements[i][j];
+						}
+				}
+			}
+		}
+		return null;
+	}
 }
 
 class Workshop {
@@ -98,13 +163,13 @@ class Workshop {
 }
 
 class Element {
-	String nazwa;
+	String name;
 	String material;
 	Double materialClass;
 	String corrosionProtection;
 
-	public Element(String nazwa, String material, Double materialClass, String corrosionProtection) {
-		this.nazwa=nazwa;
+	public Element(String name, String material, Double materialClass, String corrosionProtection) {
+		this.name=name;
 		this.material=material;
 		this.materialClass=materialClass;
 		this.corrosionProtection=corrosionProtection;
@@ -113,15 +178,15 @@ class Element {
 
 class Bolt extends Element {
 
-	public Bolt(String nazwa, String material, Double materialClass, String corrosionProtection) {
-		super(nazwa, material, materialClass, corrosionProtection);
+	public Bolt(String name, String material, Double materialClass, String corrosionProtection) {
+		super(name, material, materialClass, corrosionProtection);
 	}
 
 
 	@Override
 	public String toString() {
 		return "Bolt{" +
-				"nazwa='" + nazwa + '\'' +
+				"name='" + name + '\'' +
 				", material='" + material + '\'' +
 				", materialClass=" + materialClass +
 				", corrosionProtection='" + corrosionProtection + '\'' +
@@ -131,14 +196,14 @@ class Bolt extends Element {
 
 class Screw extends Element {
 
-	public Screw(String nazwa, String material, Double materialClass, String corrosionProtection) {
-		super(nazwa, material, materialClass, corrosionProtection);
+	public Screw(String name, String material, Double materialClass, String corrosionProtection) {
+		super(name, material, materialClass, corrosionProtection);
 	}
 
 	@Override
 	public String toString() {
 		return "Screw{" +
-				"nazwa='" + nazwa + '\'' +
+				"name='" + name + '\'' +
 				", material='" + material + '\'' +
 				", materialClass=" + materialClass +
 				", corrosionProtection='" + corrosionProtection + '\'' +
@@ -148,14 +213,14 @@ class Screw extends Element {
 
 class Nut extends Element {
 
-	public Nut(String nazwa, String material, Double materialClass, String corrosionProtection) {
-		super(nazwa, material, materialClass, corrosionProtection);
+	public Nut(String name, String material, Double materialClass, String corrosionProtection) {
+		super(name, material, materialClass, corrosionProtection);
 	}
 
 	@Override
 	public String toString() {
 		return "Nut{" +
-				"nazwa='" + nazwa + '\'' +
+				"name='" + name + '\'' +
 				", material='" + material + '\'' +
 				", materialClass=" + materialClass +
 				", corrosionProtection='" + corrosionProtection + '\'' +
@@ -165,14 +230,14 @@ class Nut extends Element {
 
 class Pad extends Element {
 
-	public Pad(String nazwa, String material, Double materialClass, String corrosionProtection) {
-		super(nazwa, material, materialClass, corrosionProtection);
+	public Pad(String name, String material, Double materialClass, String corrosionProtection) {
+		super(name, material, materialClass, corrosionProtection);
 	}
 
 	@Override
 	public String toString() {
 		return "Pad{" +
-				"nazwa='" + nazwa + '\'' +
+				"name='" + name + '\'' +
 				", material='" + material + '\'' +
 				", materialClass=" + materialClass +
 				", corrosionProtection='" + corrosionProtection + '\'' +
