@@ -10,29 +10,48 @@ public class S23813_zadanieProgramistyczne4 {
         LinkedList<Integer> numbers = new LinkedList<>();
 
         boolean exit;
+        double result = 0;
+        Integer count = 0;
+        char operator = 0;
 
         do {
             System.out.println("Input value:");
             int value = sc.nextInt();
             numbers.add(value);
-            sc.nextLine();
-            System.out.println("Add next value? (y/n):");
-            String isNext = sc.nextLine();
-            if (isNext.equals("y")) {
-                exit = false;
-            } else {
-                exit = true;
-            }
-        } while (!exit);
 
-        System.out.println("\nInput values:");
-        for (Integer val : numbers) {
-            if (val == numbers.getLast()) {
-                System.out.print(val);
+            if (numbers.size() > 1) {
+
+                if (operator != 'y') {
+
+                    switch (operator) {
+                        case '+':
+                            result += numbers.get(count);
+                            break;
+                        case '-':
+                            result -= numbers.get(count);
+                            break;
+                        case '*':
+                            result *= numbers.get(count);
+                            break;
+                        default:
+                            System.out.println("illegal operand");
+                    }
+                    System.out.println("\nresult: " + result);
+                    exit = false;
+                } else {
+                    exit = true;
+                }
             } else {
-                System.out.print(val + ", ");
+                result += numbers.get(count);
+                exit = false;
             }
-        }
+
+            count++;
+            sc.nextLine();
+            System.out.println("Add operator (+/-/*) or press 'y' for exit");
+            operator = sc.findInLine(".").charAt(0);
+
+        } while (!exit);
 
     }
 }
