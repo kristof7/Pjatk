@@ -16,6 +16,11 @@ public class S23813_zestaw11 {
     public void cwiczenie_01() {
         System.out.println("Cwiczenie_01\n");
 
+        Alarm alarm = new Alarm();
+        alarm.isAlarm = true;
+
+        new DetektorDymu().sprawdz(alarm);
+
     }
 
     public void cwiczenie_02() {
@@ -26,5 +31,22 @@ public class S23813_zestaw11 {
     public void cwiczenie_03() {
         System.out.println("Cwiczenie_03\n");
 
+    }
+}
+
+
+class Alarm extends Exception {
+
+    boolean isAlarm;
+
+}
+
+class DetektorDymu {
+
+    public void sprawdz(Alarm alarm) {
+
+        if (alarm.isAlarm) {
+            System.out.println("Uwaga alarm!");
+        }
     }
 }
