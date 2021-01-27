@@ -26,6 +26,16 @@ public class S23813_zestaw11 {
     public void cwiczenie_02() {
         System.out.println("Cwiczenie_02\n");
 
+        CiagnikSiodlowy ciagnikSiodlowy = new CiagnikSiodlowy();
+        ciagnikSiodlowy.masa = 50000;
+        ciagnikSiodlowy.setIloscOsi(4);
+        CiagnikSiodlowy ciagnikSiodlowy2 = new CiagnikSiodlowy();
+        ciagnikSiodlowy2.masa = 30000;
+        ciagnikSiodlowy2.setIloscOsi(4);
+
+        ciagnikSiodlowy.rozpocznijJazde();
+        ciagnikSiodlowy2.rozpocznijJazde();
+
     }
 
     public void cwiczenie_03() {
@@ -47,6 +57,36 @@ class DetektorDymu {
 
         if (alarm.isAlarm) {
             System.out.println("Uwaga alarm!");
+        }
+    }
+}
+
+class Pojazd {
+    String color;
+}
+
+class PojazdKolowy extends Pojazd {
+    private int iloscOsi;
+
+    public int getIloscOsi() {
+        return iloscOsi;
+    }
+
+    public void setIloscOsi(int iloscOsi) {
+        this.iloscOsi = iloscOsi;
+    }
+}
+
+class CiagnikSiodlowy extends PojazdKolowy {
+    int masa;
+
+    public void rozpocznijJazde() {
+        int iloscOsi = super.getIloscOsi();
+
+        if ((masa / iloscOsi) < 11000) {
+            System.out.println("Nacisk wynosi: " + ((double) masa / iloscOsi) + " kg");
+        } else {
+            System.out.println("Jazda niebezpieczna, odmowa uruchomienia silnika");
         }
     }
 }
