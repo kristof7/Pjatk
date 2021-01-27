@@ -41,9 +41,33 @@ public class S23813_zestaw11 {
     public void cwiczenie_03() {
         System.out.println("Cwiczenie_03\n");
 
+        int[][] tab = new int[5][5];
+
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+                int random = (int) ((Math.random() * 6));
+                tab[i][j] = random;
+                System.out.print(tab[i][j]+" ");
+            }
+            System.out.println("");
+        }
+
+        System.out.println("");
+        String bledy = "Tablica nie spełnia wymagan, bledy na pozycjach ";
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+
+                if (i != j) {
+                    if (tab[i][j] != 0) {
+                        bledy += "[" + i + ", " + j + "] ";
+                    }
+                }
+
+            }
+        }
+        System.out.println(bledy);
     }
 }
-
 
 class Alarm extends Exception {
 
