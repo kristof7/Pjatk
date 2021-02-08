@@ -43,9 +43,15 @@ public class S23813_p03 {
         } else {
             try (FileOutputStream fos = new FileOutputStream(filePath)) {
 
+                ObjectOutputStream objectA = new ObjectOutputStream(fos);
+                objectA.writeObject(" ----- STADO A ---- ");
+
                 for (Ssak s : stadoA) {
                     s.zapisz(fos);
                 }
+
+                ObjectOutputStream objectB = new ObjectOutputStream(fos);
+                objectB.writeObject(" ----- STADO B ---- ");
 
                 for (Ssak s : stadoB) {
                     s.zapisz(fos);
